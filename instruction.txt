@@ -1,0 +1,7 @@
+Scraping:
+    py - BeautifulSoup
+    js - xxos
+
+
+5h course:
+    https://www.youtube.com/watch?v=mBoX_JCKZTE
