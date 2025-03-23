@@ -11,5 +11,13 @@ deactivate
 --When making requirements file
 pip3 freeze > requirements.txt
 
+Scrapy cmd:
+    pip install scrapy
+    scrapy startproject bookscraper
+    scrapy genspider bookspider books.toscrape.com
+    pip install ipython         // for scrapy shell
+    
+
+
 5h course:
     https://www.youtube.com/watch?v=mBoX_JCKZTE
