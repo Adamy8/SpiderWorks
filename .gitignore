@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+
+.env
+.vscode/
+
+# venv
+scrape/
+
+# Temporary files
+*.tmp
+*.swp
+*.bak
+*.orig
