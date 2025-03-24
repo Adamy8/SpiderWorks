@@ -16,8 +16,10 @@ Scrapy cmd:
     scrapy startproject bookscraper
     scrapy genspider bookspider books.toscrape.com
     pip install ipython         // for scrapy shell
-    
+    scrapy shell
 
+xpath & css selector:
+    both reture data from DOM, xpath is stronger, css -> easier to use
 
 5h course:
     https://www.youtube.com/watch?v=mBoX_JCKZTE
