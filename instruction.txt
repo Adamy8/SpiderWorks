@@ -19,6 +19,7 @@ Scrapy cmd:
     scrapy shell , quit() or exit()
 
     scrapy crawl bookspider -O bookdata.csv
+    scrapy crawl bookspider -O bookdata.json
 
 xpath & css selector:
     both reture data from DOM, xpath is stronger, css -> easier to use
