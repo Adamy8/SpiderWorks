@@ -16,7 +16,9 @@ Scrapy cmd:
     scrapy startproject bookscraper
     scrapy genspider bookspider books.toscrape.com
     pip install ipython         // for scrapy shell
-    scrapy shell
+    scrapy shell , quit() or exit()
+
+    scrapy crawl bookspider -O bookdata.csv
 
 xpath & css selector:
     both reture data from DOM, xpath is stronger, css -> easier to use
