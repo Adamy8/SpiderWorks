@@ -19,7 +19,7 @@ class BookItem(scrapy.Item):
     title = scrapy.Field()
     upc = scrapy.Field()  # Universal Product Code
     product_type = scrapy.Field()
-    price_excl_tax = scrapy.Field(serializer = serialize_price)
+    price_excl_tax = scrapy.Field()
     price_incl_tax = scrapy.Field()
     tax = scrapy.Field()
     availability = scrapy.Field()
