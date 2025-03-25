@@ -12,9 +12,15 @@ deactivate
 pip3 freeze > requirements.txt
 
 MySQL:
-    mysql -u root -p  
+    mysql -u root -p        // to enter
     pip install mysql mysql-connector-python
-      
+
+MySQL cmd:
+    show databases;
+    use books;   // use any database
+    show tables;
+    SELECT * FROM books LIMIT 2;    // books is one of the tables
+    drop table books;   //remove the table
 
 Scrapy cmd:
     pip install scrapy

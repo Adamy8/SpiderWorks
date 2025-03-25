@@ -72,6 +72,8 @@ import mysql.connector
 
 class SaveToMySQLPipeline:
     def __init__(self):
+        load_dotenv()
+
         self.conn = mysql.connector.connect(
             host= 'localhost',
             user= 'root',
