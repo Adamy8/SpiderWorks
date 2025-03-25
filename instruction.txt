@@ -18,7 +18,7 @@ Scrapy cmd:
     pip install ipython         // for scrapy shell
     scrapy shell , quit() or exit()
 
-    scrapy crawl bookspider -O bookdata.csv
+    scrapy crawl bookspider -O bookdata.csv           // -O for new write, -o for append
     scrapy crawl bookspider -O bookdata.json
 
 xpath & css selector:
