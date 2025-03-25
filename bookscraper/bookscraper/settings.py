@@ -17,6 +17,8 @@ FEEDS = {      # specify the output file format
       "bookdata.json": {'format': 'json'},
 }
 
+USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "bookscraper (+http://www.yourdomain.com)"
 
@@ -68,7 +70,7 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    "bookscraper.pipelines.BookscraperPipeline": 300,
-   "bookscraper.pipelines.SaveToMySQLPipeline": 400,     # higher number means lower priority
+   # "bookscraper.pipelines.SaveToMySQLPipeline": 400,     # higher number means lower priority
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
