@@ -26,6 +26,14 @@ SCRAPEOPS_FAKE_USER_AGENT_ENDPOINT = 'https://headers.scrapeops.io/v1/user-agent
 SCRAPEOPS_FAKE_USER_AGENT_ENABLED = True
 SCRAPEOPS_NUM_RESULTS = 5
 
+
+ROTATING_PROXY_LIST = [       # from https://geonode.com/free-proxy-list
+    "104.129.205.94:54321",
+    "200.115.188.52:8080",
+    "46.32.230.38:29129",
+]  # this can also be put in a file using: ROTATING_PROXY_LIST_PATH = '/my/path/proxies.txt'
+
+
 # USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -68,7 +76,9 @@ ROBOTSTXT_OBEY = False
 DOWNLOADER_MIDDLEWARES = {
    # "bookscraper.middlewares.BookscraperDownloaderMiddleware": 543,
                            # ScrapeOpsFakeUserAgentMiddleware
-   "bookscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 544,
+   "bookscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 400,
+   'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
+   'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
 }
 
 # Enable or disable extensions

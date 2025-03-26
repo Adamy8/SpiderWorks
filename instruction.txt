@@ -36,6 +36,11 @@ User agent:
     -info: https://useragentstring.com/
     -ulimited api call to ScrapeOps for fake headers: https://scrapeops.io/app/headers
 
+Rotating proxies:
+    https://github.com/TeamHG-Memex/scrapy-rotating-proxies
+    pip install scrapy-rotating-proxies
+    get free proxies at: https://geonode.com/free-proxy-list
+
 Robots.txt:
     in settings.py: set it to false to not follow the rules
 
