@@ -36,6 +36,9 @@ User agent:
     -info: https://useragentstring.com/
     -ulimited api call to ScrapeOps for fake headers: https://scrapeops.io/app/headers
 
+Robots.txt:
+    in settings.py: set it to false to not follow the rules
+
 xpath & css selector:
     both reture data from DOM, xpath is stronger, css -> easier to use
 
