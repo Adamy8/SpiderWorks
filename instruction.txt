@@ -34,6 +34,7 @@ Scrapy cmd:
 
 User agent:
     -info: https://useragentstring.com/
+    -ulimited api call to ScrapeOps for fake headers: https://scrapeops.io/app/headers
 
 xpath & css selector:
     both reture data from DOM, xpath is stronger, css -> easier to use
