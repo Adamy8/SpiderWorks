@@ -75,10 +75,10 @@ class SaveToMySQLPipeline:
         load_dotenv()
 
         self.conn = mysql.connector.connect(
-            host= 'localhost',
-            user= 'root',
+            host= os.getenv('MYSQL_HOST'),
+            user= os.getenv('MYSQL_USER'),
             password= os.getenv('MYSQL_PASSWORD'),
-            database= 'books',
+            database= os.getenv('MYSQL_DATABASE'),
         )
         # create cursor to execute queries
         self.cursor = self.conn.cursor()
