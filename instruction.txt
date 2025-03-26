@@ -62,5 +62,8 @@ Robots.txt:
 xpath & css selector:
     both reture data from DOM, xpath is stronger, css -> easier to use
 
+SPIDER_MIDDLEWARES vs DOWNLOADER_MIDDLEWARES:
+    **Spider middlewares** handle the data after it is downloaded and passed to the spider, allowing you to process or modify the responses and items. **Downloader middlewares** manage requests before they are sent and responses after they are received, allowing you to modify headers, rotate proxies, handle retries, and more. Both types of middlewares work together to manage the flow of requests and data in Scrapy.
+
 5h course:
     https://www.youtube.com/watch?v=mBoX_JCKZTE
