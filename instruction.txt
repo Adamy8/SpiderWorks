@@ -36,10 +36,25 @@ User agent:
     -info: https://useragentstring.com/
     -ulimited api call to ScrapeOps for fake headers: https://scrapeops.io/app/headers
 
-Rotating proxies:
+Rotating proxies: (I did NOT implement M2 & M3)
+M1:
     https://github.com/TeamHG-Memex/scrapy-rotating-proxies
     pip install scrapy-rotating-proxies
     get free proxies at: https://geonode.com/free-proxy-list
+M2:
+    service by https://smartproxy.com/ (paid, residential/datacenter)
+    It gives a url that generates proxies that accroding to the requirements(country)
+    to use it: put in yield response, meta={"proxy": " the url "}, or use middleware
+M3:
+    use ScrapeOps service: proxy aggregator @ https://scrapeops.io/app/proxy
+    It handles all rotation, just simply calls its url with the scraping destnation included.
+    use function start_requests from scrapy -> to enable the first request to start with that url instead of start_urls
+    *remember to add "proxy.scrapeops.io" to allowed_domains
+    pip install scrapeops-scrapy-proxy-sdk
+        -> run the proxy through middleware(no need to change the request url, the middleware will handle the url change)
+        -> simplify (only a few line need to add in settings.py)
+        -> many other feature available:eg. SCRAPEOPS_PROXY_SETTINGS = {'country': 'us'}
+
 
 Robots.txt:
     in settings.py: set it to false to not follow the rules
