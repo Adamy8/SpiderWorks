@@ -67,6 +67,7 @@ ROBOTSTXT_OBEY = False
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    # "bookscraper.middlewares.BookscraperDownloaderMiddleware": 543,
+                           # ScrapeOpsFakeUserAgentMiddleware
    "bookscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 544,
 }
 
