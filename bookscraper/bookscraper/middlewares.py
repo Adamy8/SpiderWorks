@@ -115,9 +115,31 @@ class ScrapeOpsFakeUserAgentMiddleware:
 
     def __init__(self, settings):
         self.scrapeops_api_key = settings.get('SCRAPEOPS_API_KEY')
-        self.scrapeops_endpoint = settings.get('SCRAPEOPS_FAKE_BROWSER_HEADER_ENDPOINT', 'http://headers.scrapeops.io/v1/browser-headers') 
-        self.scrapeops_fake_browser_headers_active = settings.get('SCRAPEOPS_FAKE_BROWSER_HEADER_ENABLED', True)
+        self.scrapeops_endpoint = settings.get('SCRAPEOPS_FAKE_USER_AGENT_ENDPOINT', 'https://headers.scrapeops.io/v1/user-agents') 
+        self.scrapeops_fake_user_agents_active = settings.get('SCRAPEOPS_FAKE_USER_AGENT_ENABLED', True)
         self.scrapeops_num_results = settings.get('SCRAPEOPS_NUM_RESULTS')
         self.headers_list = []
-        self._get_headers_list()
-        self._scrapeops_fake_browser_headers_enabled()
+        self._get_user_agents_list()
+        self._scrapeops_fake_user_agents_enabled()
+
+    def _get_user_agents_list(self):
+        payload = {'api_key': self.scrapeops_api_key, 'num_results': self.scrapeops_num_results}
+        response = requests.get(self.scrapeops_endpoint, params=urlencode(payload))     # urlencode to ensure the payload is in the correct format
+        json_response = response.json()
+        self.user_agents_list = json_response.get('result', [])  # scrapeops api return in "result" key
+    
+    def _get_random_user_agent(self):
+        return self.user_agents_list[randint(0, len(self.user_agents_list) - 1)]
+    
+    def _scrapeops_fake_user_agents_enabled(self):
+        if self.scrapeops_api_key is None or self.scrapeops_api_key==' ' or not self.scrapeops_fake_user_agents_active:
+            self.scrapeops_fake_user_agents_active = False
+        else:
+            self.scrapeops_fake_user_agents_active = True
+
+    def process_request(self, request, spider):
+        random_user_agent = self._get_random_user_agent()
+        request.headers['User-Agent'] = random_user_agent
+
+        print("********** New Header Attached **********")
+        print(request.headers['User-Agent'])
