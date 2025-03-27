@@ -75,7 +75,24 @@ Deploy:
     can conle the repo directly for deployment, add deploy key in github
     very easy to deploy compared to 1, UI: can use the same ScrapeOps Monitoring service set up.(follow the docs)
 3, ScrapyCloud (paid) (part12)
-    
+    https://www.zyte.com/scrapy-cloud/
+    can use cmd tool shub in package in pip to set up directly / connect with github repo
+    extreme easy. Free for one time job, but charges scheduled job.
+
+Note:
+1) For some dynamic website, might render in the browser before giving the result:
+-Use scrapy libraries(Scrapy-Puppeteer/Scrapy-Selenium), with a headless browser integration -> render the website in a headless browser.
+-There might be API endpoint for the data (eg. endless scrolling pages sometime have it)
+2) Many other challenge available @ https://toscrape.com/
+eg. page with login
+3) Scrapy redis
+
+
+Integrate into Express Nodejs backend:
+    http get request on the ScrapyCloud api
+    to schedule: use node-cron (follow docs)
 
 5h course:
     https://www.youtube.com/watch?v=mBoX_JCKZTE
+More:
+    https://thepythonscrapyplaybook.com
