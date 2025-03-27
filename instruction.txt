@@ -66,12 +66,16 @@ SPIDER_MIDDLEWARES vs DOWNLOADER_MIDDLEWARES:
     **Spider middlewares** handle the data after it is downloaded and passed to the spider, allowing you to process or modify the responses and items. **Downloader middlewares** manage requests before they are sent and responses after they are received, allowing you to modify headers, rotate proxies, handle retries, and more. Both types of middlewares work together to manage the flow of requests and data in Scrapy.
 
 Deploy:
-1, ScrapyD (free) opensource, need 3rd party server
+1, ScrapyD (free) opensource, need 3rd party server (part10)
     3rd party server service: DigitalOcean(server provider, use to set up VMs) / VULTR / AWS
     Use ubantu(VM) on a 3rd party server, clone the repo, and run just like in bash.(some config need to be done)
     pip install some libraries for Scrapyd. Two UI option for handling spiders: ScrapydWeb / ScrapyOps Monitoring service
-2, ScrapeOps Cloud (free)
-3, ScrapyCloud (paid)
+2, ScrapeOps Server&Deployment service (free,not really) (part11)
+    same with last one, start with a server that provides VM, could be DigitalOcean/AWS/VULTR
+    can conle the repo directly for deployment, add deploy key in github
+    very easy to deploy compared to 1, UI: can use the same ScrapeOps Monitoring service set up.(follow the docs)
+3, ScrapyCloud (paid) (part12)
+    
 
 5h course:
     https://www.youtube.com/watch?v=mBoX_JCKZTE
